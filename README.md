@@ -128,26 +128,3 @@ Mappings Used:
 
 # Output (example)
     I am :(( but I try to :)
-
-# Problem 3: Unpacking List Problem
-Unpack a list into first, middle, and last elements
-
-lst = [1, 2, 3, 4, 5, 6]
-
-# Problem 3: UNPACKING LIST PROBLEM
-# Input
-    # Starting list
-    writeyourcodehere = [1, 2, 3, 4, 5, 6]
-
-    # Breaking into segments
-    first, *middle, last = writeyourcodehere
-
-    # Output
-    print("first:", first)
-    print("middle:", middle)
-    print("last:", last)
-
-# Output
-    first: 1  
-    middle: [2, 3, 4, 5]  
-    last: 6  
