@@ -15,11 +15,11 @@ About: Contains solutions for PA 2 (2 Problems)
 - Pyhton (100%)
 
 # Version History
-V1.0 ([09-14-2025]) – Initial Coding for PA1  
+V1.0 ([09-14-2025]) – Initial Coding for PA2  
 
 V1.1 ([09-15-2025]) - Creation of Repository Along with Read Me file  
 
-V1.2 ([09-16-2025]) – Finalization of Coding PA1 and Edited Documentation, Code Formatting, and Design in the README File  
+V1.2 ([09-16-2025]) – Finalization of Coding PA2 and Edited Documentation, Code Formatting, and Design in the README File  
 
 # Problem 1: Normalization Problem
 Perform normalization on a 5×5 array. Normalization ensures that the dataset has a mean of 0 and a standard deviation of 1, which is useful in machine learning and data preprocessing.
@@ -38,19 +38,39 @@ X_norm = (X - mean) / std
 
 # Problem 1: NORMALIZATION PROBLEM
 # Input
-    # Input of word
-    x = input("Enter a string:")
+    # Random 5x5 array
+    x = np.random.random ((5, 5))
 
-    # Sorting word alphabetically
-    x_sorted = sorted(x)
+    # Compute the mean and standard deviation
+    x_mean = x.mean()
+    x_std = x.std()
 
-    # Output of sorted word
-    alpha_sorted = "".join(x_sorted)
+    # Normalizing the array
+    x_norm = (x - x_mean) / x_std
 
-    print(alphabet("noah"))
+    # Save normalized array to file
+    np.save('x_normalized.npy', x_norm)
+
+    # Output
+    print("Original Array (x):", x)
+    print("Normalized array:", x_norm)
+    print("Mean of normalized array:", x_norm.mean())
+    print("Std of normalized array:", x_norm.std())
 
 # Output (example)
-    ahno
+    Original Array (x): [[0.13876111 0.82520145 0.44485714 0.71333628 0.31701658]
+    [0.93664084 0.40594239 0.98380147 0.29004238 0.65456719]
+    [0.93580287 0.31902745 0.66210078 0.69087632 0.71626273]
+    [0.01252822 0.22858308 0.69299579 0.23342117 0.32353685]
+    [0.82795719 0.1249404  0.52648241 0.95777694 0.38326412]]
+    Normalized array: [[-1.38090678  1.01845375 -0.31098898  0.62744397 -0.75783859]
+    [ 1.40797523 -0.44701029  1.5728189  -0.85212331  0.42202447]
+    [ 1.40504624 -0.75080986  0.44835713  0.54893818  0.63767299]
+    [-1.82213697 -1.06694608  0.55634649 -1.05003518 -0.73504784]
+    [ 1.02808605 -1.4292152  -0.02567877  1.48185363 -0.52627918]]
+    Mean of normalized array: -9.325873406851315e-17
+    Std of normalized array: 1.0
+
 # Problem 2: Emoticon Problem
 Change specific words into emoticons from user input
 
